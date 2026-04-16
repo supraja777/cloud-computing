@@ -22,9 +22,9 @@ QUESTIONS_AND_ANSWERS = {
 }
 
 CREATOR_INFO = {
-    "first_name": "Harika",
-    "last_name": "Pinninti",
-    "email": "pinninha@mail.uc.edu"
+    "first_name": "Supraja",
+    "last_name": "Srikanth",
+    "email": "suprajasrikanth872@gmail.com"
 }
 
 @app.route("/", methods=["GET", "POST"])
