@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Chatbot</title>
+</head>
+<body>
+
+    <h1>College Inquiry Chatbot</h1>
+
+    <form method="POST">
+
+        <h3>Enter Your Details</h3>
+        <input type="text" name="first_name" placeholder="First Name" required><br><br>
+        <input type="text" name="last_name" placeholder="Last Name" required><br><br>
+        <input type="email" name="email" placeholder="Email" required><br><br>
+        <input type="reset" value="Clear Details"><br><br>
+
+        <h3>Select a Question</h3>
+
+        <button type="submit" name="question" value="football">
+            Does the college have a football team?
+        </button><br><br>
+
+        <button type="submit" name="question" value="cs">
+            Does it offer a Computer Science major?
+        </button><br><br>
+
+        <button type="submit" name="question" value="tuition">
+            What is the in-state tuition?
+        </button><br><br>
+
+        <button type="submit" name="question" value="housing">
+            Does it provide on-campus housing?
+        </button>
+
+    </form>
+
+    {% if selected_question %}
+        <h3>Answer:</h3>
+        <p><b>{{ selected_question }}</b></p>
+        <p>{{ selected_answer }}</p>
+    {% endif %}
+
+    {% if user_info.first_name and user_info.last_name and user_info.email %}
+        <h3>Chatbot Conclusion</h3>
+        <p><b>User First Name:</b> {{ user_info.first_name }}</p>
+        <p><b>User Last Name:</b> {{ user_info.last_name }}</p>
+        <p><b>User Email:</b> {{ user_info.email }}</p>
+
+        <h3>Chatbot Creator Information</h3>
+        <p><b>First Name:</b> {{ creator.first_name }}</p>
+        <p><b>Last Name:</b> {{ creator.last_name }}</p>
+        <p><b>School Email:</b> {{ creator.email }}</p>
+    {% endif %}
+
+</body>
+</html>
